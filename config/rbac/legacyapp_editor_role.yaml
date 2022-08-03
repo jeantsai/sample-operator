@@ -1,0 +1,24 @@
+# permissions for end users to edit legacyapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: legacyapp-editor-role
+rules:
+- apiGroups:
+  - operator.jeantsai.cn
+  resources:
+  - legacyapps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - operator.jeantsai.cn
+  resources:
+  - legacyapps/status
+  verbs:
+  - get

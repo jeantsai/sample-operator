@@ -1,0 +1,6 @@
+apiVersion: operator.jeantsai.cn/v1alpha1
+kind: LegacyApp
+metadata:
+  name: legacyapp-sample
+spec:
+  # TODO(user): Add fields here
