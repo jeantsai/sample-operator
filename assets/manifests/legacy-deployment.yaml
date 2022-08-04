@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "legacy-deployment"
+  namespace: "legacyapp"
+  labels:
+    app: "legacy"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "legacy"
+  template:
+    metadata:
+      labels:
+        app: "legacy"
+    spec:
+      containers:
+        - name: "app"
+          image: "bitnami/openresty:1.21"
+          resources:
+            requests:
+              cpu: 250m
+              memory: 100Mi
+            limits:
+              cpu: 1000m
+              memory: 1000Mi
+          ports:
+            - containerPort: 8080
